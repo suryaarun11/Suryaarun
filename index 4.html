@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES RELATIONSHIP CALCULATOR  MAKED BY BCA SURYA </title>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnAPAf4PaIW295Ml0iJ_DFNzVSLcfWtDmpYw&usqp=CAU');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .container {
+            margin-top: 100px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: cyan;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>FLAMES RELATIONSHIP CALCULATOR</h1>
+        <h1>MAKED BY BCA SURYA L</h1>
+        <h1>JUST FOR FUN😂</h1>
+        <h2>THIS IS FOR YOU 😜</h2>
+        <input type="text" id="name1" placeholder="Enter First Name">
+        <input type="text" id="name2" placeholder="Enter Second Name">
+        <button onclick="calculateFlames()">FIND RELATIONSHIP</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateFlames() {
+            let name1 = document.getElementById("name1").value.toLowerCase().replace(/\s+/g, '');
+            let name2 = document.getElementById("name2").value.toLowerCase().replace(/\s+/g, '');
+
+            if (name1 === "" || name2 === "") {
+                document.getElementById("result").innerHTML = "Please enter both names!";
+                return;
+            }
+
+            let flames = ["FRIENDSHIP 🖇️🫂🎀🫶🏻💌💓 ", "LOVER 🌍♥️🫵🏻", "AFFECTION 🫰🏼🫶🏼  ", "MARRIAGE 👩‍❤️‍👨", "ENEMIES 🤬  👊", "SIBLINGS💪😎❤️👑🔥"];
+            let count = name1.length + name2.length;
+
+            let index = count % flames.length;
+            let result = flames[index];
+
+            document.getElementById("result").innerHTML = "Your Relationship: <b>" + result + "</b>";
+        }
+    </script>
+
+</body>
+</html>
