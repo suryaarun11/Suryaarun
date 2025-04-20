@@ -614,7 +614,8 @@
             </div>
         </div>
     </div>
-<script>
+
+    <script>
         // Create background particles
         function createParticles() {
             const container = document.getElementById('bgParticles');
@@ -643,7 +644,7 @@
         // Create floating elements
         //function createFloatingElements() {
             const container = document.getElementById('floatingElements');
-            const elements = [ '💖' ,'💝'];
+            const elements = ['❤️', '🧡', '💛', '💚', '💙', '💜', '💖', '💘', '🔥', '✨', '💕', '💞', '💓', '💗', '💝'];
             
             for (let i = 0; i < 15; i++) {
                 const element = document.createElement('div');
@@ -898,18 +899,11 @@
                 {text: "SIBLINGS", emoji: "👨‍👧‍👦", color: "#60a5fa", desc: "You have a sibling-like bond", stars: 2}
             ];
             
-            // Special case for surya and sushi
-            //let result;
+            // Calculate result based on names
+            let count = name1.length + name2.length;
+            let index = count % flames.length;
+            let result = flames[index];
             let percentageValue = parseInt(percentage.textContent);
-            
-            if ((name1 === '' && name2 === '') || (name1 === '' && name2 === '')) {
-                result = flames[1]; // LOVE
-            } else {
-                // Calculate result based on names for all other cases
-                let count = name1.length + name2.length;
-                let index = count % flames.length;
-                result = flames[index];
-            }
             
             // Add to history
             calculationHistory.push({
@@ -1001,9 +995,5 @@
         `;
         document.head.appendChild(style);
     </script>
-        
-        
-                                
-
 </body>
 </html>
